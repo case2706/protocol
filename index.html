@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>PROTOCOL</title>
+
+<style>
+
+body{
+
+background:black;
+
+color:#00ff66;
+
+font-family:Consolas,monospace;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+margin:0;
+
+overflow:hidden;
+
+}
+
+#terminal{
+
+width:900px;
+
+font-size:24px;
+
+line-height:40px;
+
+}
+
+button{
+
+margin-top:40px;
+
+padding:15px 40px;
+
+font-size:20px;
+
+background:#00ff66;
+
+color:black;
+
+border:none;
+
+cursor:pointer;
+
+display:none;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="terminal">
+
+<div id="text"></div>
+
+<button onclick="location.href='stage1.html'">
+
+ПОДКЛЮЧИТЬСЯ
+
+</button>
+
+</div>
+
+<script>
+
+const lines=[
+
+"...",
+
+"Поиск сигнала...",
+
+"Источник найден.",
+
+"",
+
+"Если вы читаете это сообщение...",
+
+"значит протокол активирован.",
+
+"",
+
+"Имя объекта:",
+
+"EVA",
+
+"",
+
+"Статус:",
+
+"НЕИЗВЕСТНО"
+
+];
+
+let i=0;
+
+function type(){
+
+if(i<lines.length){
+
+document.getElementById("text").innerHTML+=lines[i]+"<br>";
+
+i++;
+
+setTimeout(type,1000);
+
+}
+
+else{
+
+document.querySelector("button").style.display="block";
+
+}
+
+}
+
+type();
+
+</script>
+
+</body>
+
+</html>
